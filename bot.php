@@ -62,9 +62,7 @@ if ($text == "/start") {
  'parse_mode'=>'MarkDown',
             
         ]);
- }
-
- if ($text == "/cmds") {
+ }if ($text == "/cmds") {
 
     bot('sendmessage', [
         'chat_id' =>$chat_id,
@@ -76,10 +74,8 @@ if ($text == "/start") {
         ✨ Bot By: @Shein0425 ***",
 'parse_mode'=>'MarkDown',
     
-]);
-}  
-
-if(strpos($text,"/bin") !== false){ 
+       ]);
+}  if(strpos($text,"/bin") !== false){ 
     $bin = trim(str_replace("/bin","",$text)); 
     
     $data = json_decode(file_get_contents("https://bins-su-api.now.sh/api/$bin"),true);
@@ -110,10 +106,9 @@ if(strpos($text,"/bin") !== false){
                     'chat_id' =>$chat_id,
                     'text' =>"❌INVALID BIN❌",
                    
-    ]);
-    }
-
-if(strpos($text,"/fake") !== false){ 
+        ]);
+	}    
+    }if(strpos($text,"/fake") !== false){ 
     $addr = trim(str_replace("/fake","",$text)); 
     
     $data2 = json_decode(file_get_contents("https://randomuser.me/api/1.3/?nat=$addr"),true);
@@ -153,7 +148,6 @@ bot('sendmessage', [
                 'text' =>"❌INVALID COUNTRY❌",
                
 ]);
-}
 }
 
 ?>
