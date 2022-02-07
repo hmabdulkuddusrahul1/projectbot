@@ -108,7 +108,7 @@ if ($text == "/start") {
                    
         ]);
 	}    
-    }if(strpos($text,"/fake") !== false){ 
+    if(strpos($text,"/fake") !== false){ 
     $addr = trim(str_replace("/fake","",$text)); 
     
     $data2 = json_decode(file_get_contents("https://randomuser.me/api/1.3/?nat=$addr"),true);
