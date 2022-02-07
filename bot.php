@@ -110,12 +110,6 @@ bot('sendmessage', [
 'parse_mode'=>"MarkDown",
 ]);
     }
-else {
-bot('sendmessage', [
-                'chat_id' =>$chat_id,
-                'text' =>"❌INVALID COUNTRY❌",
-               
-]);
-}
+
 }
 ?>
