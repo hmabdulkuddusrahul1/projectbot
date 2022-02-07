@@ -128,7 +128,7 @@ if(strpos($text,"/fake") !== false){
     $phone =  $data2['phone']['phone'];
     $cell =  $data2['cell']['cell'];
 
- if($data['data']){
+ if($data2['data2']){
 bot('sendmessage', [
                 'chat_id' =>$chat_id,
                 'text' =>"***successfully generated✅
