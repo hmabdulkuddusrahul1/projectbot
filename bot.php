@@ -81,15 +81,15 @@ if ($text == "/start") {
     
     $data2 = json_decode(file_get_contents("https://randomuser.me/api/1.3/?nat=$addr"),true);
     $gender =  $data2['results']['gender'];
-    $name = $data2['name']['first']['last'];
-    $country =  $data2['location']['country'];
-    $city =  $data2['location']['city'];
-    $adress =  $data2['location']['name']['number'];
-    $state =  $data2['location']['state'];
-    $zip =  $data2['location']['postcode'];
-    $email =  $data2['email']['email'];
-    $phone =  $data2['phone']['phone'];
-    $cell =  $data2['cell']['cell'];
+    $name = $data2['results']['first']['last'];
+    $country =  $data2['results']['location']['country'];
+    $city =  $data2['results']['location']['city'];
+    $adress =  $data2['results']['location']['name']['number'];
+    $state =  $data2['results']['location']['state'];
+    $zip =  $data2['results']['location']['postcode'];
+    $email =  $data2['results']['email']['email'];
+    $phone =  $data2['results']['phone']['phone'];
+    $cell =  $data2['results']['cell']['cell'];
 
  if($data2['data2']){
 bot('sendmessage', [
@@ -110,6 +110,12 @@ bot('sendmessage', [
 'parse_mode'=>"MarkDown",
 ]);
     }
-
+else {
+bot('sendmessage', [
+                'chat_id' =>$chat_id,
+                'text' =>"❌INVALID COUNTRY❌",
+               
+]);
+}
 }
 ?>
