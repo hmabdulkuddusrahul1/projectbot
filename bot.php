@@ -75,39 +75,7 @@ if ($text == "/start") {
 'parse_mode'=>'MarkDown',
     
        ]);
-}  if(strpos($text,"/bin") !== false){ 
-    $bin = trim(str_replace("/bin","",$text)); 
-    
-    $data = json_decode(file_get_contents("https://bins-su-api.now.sh/api/$bin"),true);
-    $bank = $data['data']['bin'];
-    $vendor =  $data['data']['vendor'];
-    $type =  $data['data']['type'];
-    $level =  $data['data']['level'];
-    $bank =  $data['data']['bank'];
-    $country =  $data['data']['country'];
-    
-     if($data['data']){
-    bot('sendmessage', [
-                    'chat_id' =>$chat_id,
-                    'text' =>"***VALID BIN✅
-                   
-    ➤ Bɪɴ :*** `$bin` ***
-    ➤ Tʏᴘᴇ : $type
-    ➤ Bʀᴀɴᴅ : $vendor
-    ➤ Bᴀɴᴋ : $bank
-    ➤ Cᴏᴜɴᴛʀʏ : $country
-    ➤ Cʀᴇᴅɪᴛ/Dᴇʙɪᴛ : $type
-    🔺Owner Bin-Info bot: @Shein0425🔻***",
-    'parse_mode'=>"MarkDown",
-    ]);
-        }
-    else {
-    bot('sendmessage', [
-                    'chat_id' =>$chat_id,
-                    'text' =>"❌INVALID BIN❌",
-                   
-        ]);
-	}    
+} 
     if(strpos($text,"/fake") !== false){ 
     $addr = trim(str_replace("/fake","",$text)); 
     
@@ -149,5 +117,5 @@ bot('sendmessage', [
                
 ]);
 }
-
+}
 ?>
