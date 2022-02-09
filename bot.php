@@ -81,31 +81,31 @@ if ($text == "/start") {
     
     $data2 = json_decode(file_get_contents("https://randomuser.me/api/1.3/?nat=$addr"),true);
     $gender =  $data2['results']['gender'];
-    $name = $data2['results']['first']['last'];
-    $country =  $data2['results']['location']['country'];
-    $city =  $data2['results']['location']['city'];
-    $adress =  $data2['results']['location']['name']['number'];
-    $state =  $data2['results']['location']['state'];
-    $zip =  $data2['results']['location']['postcode'];
-    $email =  $data2['results']['email']['email'];
-    $phone =  $data2['results']['phone']['phone'];
-    $cell =  $data2['results']['cell']['cell'];
+    $name = $data2['results']['name'];
+    $country =  $data2['results']['country'];
+    $city =  $data2['results']['city'];
+    $adress =  $data2['results']['street'];
+    $state =  $data2['results']['state'];
+    $zip =  $data2['results']['postcode'];
+    $email =  $data2['results']['email'];
+    $phone =  $data2['results']['phone'];
+    $cell =  $data2['results']['cell'];
 
  if($data2['data2']){
 bot('sendmessage', [
                 'chat_id' =>$chat_id,
                 'text' =>"***successfully generated✅
                
-➤ Gender :*** `$gender` ***
-➤ Name :*** `$name` ***
-➤ Country :*** `$country` ***
-➤ City :*** `$city` ***
-➤ Adress :*** `$adress` ***
-➤ State :*** `$state` ***
-➤ PostCode :*** `$zip` ***
-➤ Email :*** `$email` ***
-➤ Phone :*** `$phone` ***
-➤ Cell :*** `$cell` ***
+➤ Gender : *** `$gender` ***
+➤ Name : *** `$name` ***
+➤ Country : *** `$country` ***
+➤ City : *** `$city` ***
+➤ Adress : *** `$adress` ***
+➤ State : *** `$state` ***
+➤ PostCode : *** `$zip` ***
+➤ Email : *** `$email` ***
+➤ Phone : *** `$phone` ***
+➤ Cell : *** `$cell` ***
 🔺Owner bot: @Shein0425🔻***",
 'parse_mode'=>"MarkDown",
 ]);
