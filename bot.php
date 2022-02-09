@@ -77,21 +77,21 @@ if ($text == "/start") {
        ]);
 } 
     if(strpos($text,"/fake") !== false){ 
-    $addr = trim(str_replace("/fake","",$text)); 
-    
-    $data2 = json_decode(file_get_contents("https://randomuser.me/api/1.3/?nat=$addr"),true);
-    $gender =  $data2['results']['gender'];
-    $name = $data2['results']['name'];
-    $country =  $data2['results']['country'];
-    $city =  $data2['results']['city'];
-    $adress =  $data2['results']['street'];
-    $state =  $data2['results']['state'];
-    $zip =  $data2['results']['postcode'];
-    $email =  $data2['results']['email'];
-    $phone =  $data2['results']['phone'];
-    $cell =  $data2['results']['cell'];
+$bin = trim(str_replace("/fake","",$text)); 
 
- if($data2['data2']){
+$data = json_decode(file_get_contents("https://randomuser.me/api/1.3/?nat=$bin"),true);
+$gender =  $data['results']['gender'];
+$name = $data['results']['name'];
+$country =  $data['results']['country'];
+$city =  $data['results']['city'];
+$adress =  $data['results']['street'];
+$state =  $data['results']['state'];
+$zip =  $data['results']['postcode'];
+$email =  $data['results']['email'];
+$phone =  $data['results']['phone'];
+$cell =  $data['results']['cell'];
+
+ if($data['data']){
 bot('sendmessage', [
                 'chat_id' =>$chat_id,
                 'text' =>"***successfully generated✅
